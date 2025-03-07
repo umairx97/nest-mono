@@ -2,7 +2,11 @@
   "name": "@nest-mono/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "knex:migrate": "tsx ./node_modules/knex/bin/cli.js migrate:make create_user_table --knexfile apps/backend/src/knexfile.ts ",
+    "knex:latest": "tsx ./node_modules/knex/bin/cli.js migrate:latest --knexfile apps/backend/src/knexfile.ts "
+  
+  },
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -25,9 +29,10 @@
     "@swc/helpers": "~0.5.11",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.1.0",
+    "@types/express": "^5.0.0",
     "@types/jest": "^29.5.12",
     "@types/knex": "^0.16.1",
-    "@types/node": "18.16.9",
+    "@types/node": "^18.19.79",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@vitejs/plugin-react": "^4.2.0",
@@ -49,7 +54,8 @@
     "prettier": "^2.6.2",
     "tailwindcss": "3.4.3",
     "ts-jest": "^29.1.0",
-    "ts-node": "10.9.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
     "tslib": "^2.3.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.19.0",
@@ -67,6 +73,7 @@
     "react-dom": "19.0.0",
     "react-router-dom": "6.29.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "tsx": "^4.19.3"
   }
 }
