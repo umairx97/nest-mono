@@ -1,4 +1,3 @@
-import('ts-node/register');
 import { Knex } from 'knex';
 
 const config: Knex.Config = {
