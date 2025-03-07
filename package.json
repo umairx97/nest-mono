@@ -5,7 +5,6 @@
   "scripts": {
     "knex:migrate": "tsx ./node_modules/knex/bin/cli.js migrate:make create_user_table --knexfile apps/backend/src/knexfile.ts ",
     "knex:latest": "tsx ./node_modules/knex/bin/cli.js migrate:latest --knexfile apps/backend/src/knexfile.ts "
-  
   },
   "private": true,
   "devDependencies": {
@@ -66,8 +65,10 @@
   "dependencies": {
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
+    "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^10.0.2",
     "knex": "^3.1.0",
+    "nest-knexjs": "^0.0.26",
     "pg": "^8.13.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
