@@ -45,7 +45,7 @@ npx nx typecheck frontend
 
 ## Development
 ```bash
-npx nx serve backend
+npx nx dev backend
 ```
 
 ## Build
