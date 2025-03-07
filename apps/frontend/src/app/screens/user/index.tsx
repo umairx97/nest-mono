@@ -34,30 +34,41 @@ const UserPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center h-full gap-10 p-4">
-      <h1 className="heading">User Page</h1>
-      <div>
-        <h2 className="heading">Create User</h2>
+    <div className="flex flex-col items-center justify-center h-screen gap-8 p-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+      <h1 className="text-4xl font-semibold text-white">User Page</h1>
+      <div className="w-full max-w-md p-6 space-y-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-gray-700">Create User</h2>
         <div className="flex gap-4">
           <input
-            className="input"
+            className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             type="text"
-            placeholder="Name"
+            placeholder="Enter user name"
             value={newUserName}
             onChange={(e) => setNewUserName(e.target.value)}
           />
-          <button className="btn" onClick={handleCreateUser}>
+          <button
+            className="px-6 py-3 font-semibold text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            onClick={handleCreateUser}
+          >
             Submit
           </button>
         </div>
       </div>
-      <div>
-        <h2 className="heading">All Users</h2>
-        <ul className="p-4 list-disc">
+
+      <div className="w-full max-w-md p-6 space-y-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-gray-700">All Users</h2>
+        <ul className="space-y-2">
           {users.length > 0 ? (
-            users.map((user) => <li key={user.id}>{user.name}</li>)
+            users.map((user) => (
+              <li
+                key={user.id}
+                className="p-3 transition-colors bg-gray-100 rounded-md shadow-sm hover:bg-gray-200"
+              >
+                {user.name}
+              </li>
+            ))
           ) : (
-            <p>No users found</p>
+            <p className="text-gray-500">No users found</p>
           )}
         </ul>
       </div>
